@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mondayhero_starter_project/route/app_routes.dart';
+import 'package:mondayhero_starter_project/screens/home_screen.dart';
 
 /// SETUP APP ROUTER - Follow these steps 👇
 /// 1 - Go to your App definition
@@ -15,15 +16,22 @@ import 'package:mondayhero_starter_project/route/app_routes.dart';
 /// ```
 
 class AppRouter {
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case AppRoutes.init:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+          settings: settings,
+        );
+      case AppRoutes.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(
-              child: Text('404 Page ${settings.name}'),
-            ),
-          ),
+          builder: (_) => Scaffold(body: Center(child: Text('404 Page ${settings.name}'))),
           settings: settings,
         );
     }

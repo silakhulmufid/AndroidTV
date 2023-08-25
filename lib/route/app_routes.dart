@@ -1,3 +1,4 @@
 abstract class AppRoutes {
-  static const init = '/404';
+  static const init = '/';
+  static const homeScreen = '/';
 }
